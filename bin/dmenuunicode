@@ -6,7 +6,8 @@
 # Must have xclip installed to even show menu.
 xclip -h 2>/dev/null || exit 1
 
-chosen=$(cut -d ';' -f1 ~/.local/share/emoji | dmenu -i -l 20 | sed "s/ .*//")
+font='DejaVuSansMono 9'
+chosen=$(cut -d ';' -f1 ~/.local/share/emoji | dmenu -fn "$font" -i -l 20 | sed "s/ .*//")
 
 [ "$chosen" != "" ] || exit
 
