@@ -7,6 +7,7 @@ alias rd='rm -r'
 alias m='man'
 alias v=vim
 alias vi=vim
+alias e=emacs -nw
 alias f=fzf
 #alias find=fd
 alias p=pacman
