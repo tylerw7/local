@@ -2,18 +2,19 @@
 # set the background or lockscreen
 
 [[ ! -n $1 ]] && echo 'An image is required.' && exit 1
+file=$(readlink -f $1)
 
 # default to setting the background
 if [[ -n $2 ]]; then
 	case $2 in
 		lock)
-			ln -sf $1 ~/.cache/lock && (notify-send "Lock Screen Changed 🖼" &)
+			ln -sf $file ~/.cache/lock && (notify-send "Lock Screen Changed 🖼" &)
 			;;
 		*)
-			ln -sf $1 ~/.cache/bg && feh --bg-scale ~/.cache/bg && (notify-send "Background Changed 🖼" &)
+			ln -sf $file ~/.cache/bg && feh --bg-scale ~/.cache/bg && (notify-send "Background Changed 🖼" &)
 			;;
 	esac
 else
-	ln -sf $1 ~/.cache/bg && feh --bg-scale ~/.cache/bg && (notify-send "Background Changed 🖼" &)
+	ln -sf $file ~/.cache/bg && feh --bg-scale ~/.cache/bg && (notify-send "Background Changed 🖼" &)
 fi
 
