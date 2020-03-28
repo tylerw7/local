@@ -1,0 +1,19 @@
+#!/bin/sh
+# set the background or lockscreen
+
+[[ ! -n $1 ]] && echo 'An image is required.' && exit 1
+
+# default to setting the background
+if [[ -n $2 ]]; then
+	case $2 in
+		lock)
+			ln -sf $1 ~/.cache/lock
+			;;
+		*)
+			ln -sf $1 ~/.cache/bg && feh --bg-scale ~/.cache/bg
+			;;
+	esac
+else
+	ln -sf $1 ~/.cache/bg && feh --bg-scale ~/.cache/bg
+fi
+
