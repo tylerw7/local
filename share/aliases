@@ -1,5 +1,5 @@
 [[ -f /usr/bin/rg ]] && alias grep='rg'
-alias ls='ls --color'
+alias l='ls --color'
 alias ll='ls -l --color'
 alias la='ls -a --color'
 alias cl='clear'
@@ -10,4 +10,5 @@ alias vi=vim
 alias e='emacs -nw'
 alias f=fzf
 #alias find=fd
-alias p=pacman
+alias y=yay
+
