@@ -1,0 +1,6 @@
+#!/bin/bash
+
+date_time=$(date '+%D %r')
+
+echo $(printf "📅 %s" "$date_time")
+

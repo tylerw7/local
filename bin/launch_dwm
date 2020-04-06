@@ -1,0 +1,7 @@
+#!/bin/sh
+# load xresources (if available) before starting dwm (in xinitrc)
+# also start dwmblocks if available
+
+[ -f ~/.config/xresources ] && xrdb ~/.config/xresources
+[ -x $(command -v dwmblocks) ] && (dwmblocks &)
+exec dwm

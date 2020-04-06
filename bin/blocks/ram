@@ -1,0 +1,4 @@
+#!/bin/bash
+
+free -h | awk 'FNR == 2 {print "🐏" $3 "/" $7}'
+
