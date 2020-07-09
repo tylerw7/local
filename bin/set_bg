@@ -8,13 +8,13 @@ file=$(readlink -f $1)
 if [[ -n $2 ]]; then
 	case $2 in
 		lock)
-			ln -sf $file ~/.cache/lock && (notify-send "Lock Screen Changed 🖼" &)
+			ln -sf $file ~/.cache/lock && (notify-send -t 1000 "Lock Screen Changed 🖼" &)
 			;;
 		*)
-			ln -sf $file ~/.cache/bg && xwallpaper --zoom ~/.cache/bg && (notify-send "Background Changed 🖼" &)
+			ln -sf $file ~/.cache/bg && xwallpaper --zoom ~/.cache/bg && (notify-send -t 1000 "Background Changed 🖼" &)
 			;;
 	esac
 else
-	ln -sf $file ~/.cache/bg && xwallpaper --zoom ~/.cache/bg && (notify-send "Background Changed 🖼" &)
+	ln -sf $file ~/.cache/bg && xwallpaper --zoom ~/.cache/bg && (notify-send -t 1000 "Background Changed 🖼" &)
 fi
 
