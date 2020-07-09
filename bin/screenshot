@@ -1,0 +1,3 @@
+#!/bin/sh
+notify-send -t 1000 "Screenshot taken 🖼" && scrot ~/pic/screenshots/%Y-%m-%d-%T-screenshot.png
+

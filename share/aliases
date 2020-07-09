@@ -2,7 +2,6 @@
 alias l='ls --color'
 alias ll='ls -l --color'
 alias la='ls -a --color'
-alias cl='clear'
 alias rd='rm -r'
 alias m='man'
 alias n=nvim

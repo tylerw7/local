@@ -1,0 +1,3 @@
+#!/bin/sh
+ddjvu -format=pdf -quality=85 -verbose $1 $2
+

@@ -1,8 +1,10 @@
 #!/bin/sh
-# load xresources (if available) before starting dwm (in xinitrc)
+# load xresources (if available) before starting
 
 if [ -f ~/.config/xresources ]; then
 	xrdb ~/.config/xresources
 fi
 [ -x $(command -v dwmblocks) ] && (dwmblocks &)
 exec dwm
+# exec openbox-session
+# exec xmonad
