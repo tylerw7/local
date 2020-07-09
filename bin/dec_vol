@@ -2,5 +2,5 @@
 # decrease volume
 
 pamixer -d 5
-pkill -SIGRTMIN+9 i3blocks
+kill -35 $(pidof dwmblocks)
 
