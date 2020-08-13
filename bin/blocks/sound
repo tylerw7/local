@@ -3,14 +3,16 @@
 if [[ $(pamixer --get-mute) = "false" ]]; then
 	volume=$(pamixer --get-volume) 
 	
-	if [[ $volume -le 33 ]]; then
-		echo $(printf "🔈 %d%%" $volume)
-	elif [[ $volume -le 66 ]]; then
-		echo $(printf "🔉 %d%%" $volume)
-	else
-		echo $(printf "🔊 %d%%" $volume)
-	fi
+	# if [[ $volume -le 33 ]]; then
+		# echo $(printf "🔈 %d%%" $volume)
+	# elif [[ $volume -le 66 ]]; then
+		# echo $(printf "🔉 %d%%" $volume)
+	# else
+		# echo $(printf "🔊 %d%%" $volume)
+	# fi
+	echo $(printf "%d%%" $volume)
 else
-	echo "🔇"
+	# echo "🔇"
+	echo "muted"
 fi
 
