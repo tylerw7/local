@@ -1,7 +1,21 @@
 #!/bin/sh
-# Get connected monitors, only works for current two monitor setup
 
-MONITORS=$(xrandr --query)
-export MONITOR1=$(echo "$MONITORS" | grep 'DP-[0-9] connected' | awk '{ print $1 }')
-export MONITOR2=$(echo "$MONITORS" | grep 'HDMI-[0-9] connected' | awk '{ print $1 }')
+# sometimes the display port number is one higher for each port, check if DP-1 is connected
+case $(xrandr -q | grep DP-1 | awk '{print $2}') in 
+"disconnected")
+	MONITOR1="DP-2"
+	MONITOR2="DP-3"
+	MONITOR3="DP-4"
+	;;
+*)
+	MONITOR1="DP-1"
+	MONITOR2="DP-2"
+	MONITOR3="DP-3"
+	;;
 
+esac
+
+(xrandr \
+	--output $MONITOR2 --mode 2560x1440 --rate 60 --primary \
+	--output $MONITOR1 --mode 2560x1440 --rate 144 --right-of $MONITOR2 \
+	--output $MONITOR3 --mode 2560x1440 --rate 60 --right-of $MONITOR1 --rotate left)
