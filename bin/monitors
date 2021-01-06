@@ -17,5 +17,5 @@ esac
 
 (xrandr \
 	--output $MONITOR2 --mode 2560x1440 --rate 60 --primary \
-	--output $MONITOR1 --mode 2560x1440 --rate 144 --right-of $MONITOR2 \
-	--output $MONITOR3 --mode 2560x1440 --rate 60 --right-of $MONITOR1 --rotate left)
+	--output $MONITOR1 --mode 2560x1440 --rate 144 --left-of $MONITOR2 \
+	--output $MONITOR3 --mode 2560x1440 --rate 60 --left-of $MONITOR1 --rotate right)
